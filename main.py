@@ -6,6 +6,11 @@ app = FastAPI()
 # Load the spaCy NER model
 nlp_ner = spacy.load("model-best")
 
+@app.get("/hello")
+def read_hello():
+    return {"message": "Hello"}
+
+
 @app.post("/extract")
 async def extract_categories(text: str):
     # Process the user input text
