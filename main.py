@@ -1,9 +1,7 @@
 from fastapi import FastAPI
-from mangum import Mangum
 import spacy
 
 app = FastAPI()
-handler=Mangum(app)
 
 # Load the spaCy NER model
 nlp_ner = spacy.load("model-best")
